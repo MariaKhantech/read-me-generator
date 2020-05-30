@@ -61,14 +61,14 @@ const questions = [
     },
     {
         type:'checkbox',
-        name:'questions1',
-        message:'Would you like to include your GitHub email?',
+        name:'question1',
+        message:'Would you like to include your GitHub email address?',
         choices:["Yes", "No"]
 
     },
     {
         type:'checkbox',
-        name:'questions2',
+        name:'question2',
         message:'Would you like to add your GitHub picture?',
         choices:["Yes", "No"]
         
