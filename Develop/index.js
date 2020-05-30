@@ -1,4 +1,4 @@
-const fs = requre("fs");
+const fs = require("fs");
 const inquirer = require('inquirer');
 const generate= require("./utils/generate-mark-down");
 
@@ -22,7 +22,7 @@ const questions = [
     },
     {
         type:'list',
-        name:'table of contents',
+        name:'tableofcontents',
         message:'What would you like in your table of contents?',
         choices: [
             "Yes",
@@ -37,13 +37,13 @@ const questions = [
   
     {
         type:'input',
-        name:'License',
+        name:'license',
         message:'What did you use for a license?'
 
     },
     {
         type:'input',
-        name:'Contributing',
+        name:'contributing',
         message:'Who contributed?'
 
     },
@@ -51,6 +51,12 @@ const questions = [
         type:'input',
         name:'tests',
         message:'What would you like to put in the test section?'
+
+    },
+    {
+        type:'input',
+        name:'usage',
+        message:'What would you like to put in the usage section?'
 
     },
     {
@@ -71,6 +77,14 @@ const questions = [
 ];
 
  writeToFile = (fileName, data) => {
+     fs.writeFile(fileName, data, (err) => {
+         
+         if (err) {
+             return console.log(err);
+         } else {
+             console.log("successful")
+         }
+     })
 }
 
 const init = () => {
@@ -78,8 +92,8 @@ const init = () => {
     //start asking the questions to the users
     inquirer.prompt(questions)
     .then(async answers => {
-        console.log(answers.username);
         let formatReadme = await generate.generateMarkDown(answers)
+        writeToFile("read-me.md", formatReadme )
     })
     .catch(error => {
         throw error;    
@@ -87,4 +101,6 @@ const init = () => {
 
 }
 
+
 init();
+

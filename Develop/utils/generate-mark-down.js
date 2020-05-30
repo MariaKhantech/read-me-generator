@@ -1,13 +1,13 @@
 function generateMarkDown(answers) {
    console.log("here"+answers.title)
-  let format = `## ${answers.title}\n\n` +
-  `# Description\n ${answers.description}\n\n` +
-   `## Table of contents  ${answers.tableofcontents}\n\n` +
-    `# Usage ${answers.usage}\n\n` +
-    `# Installationn\n ${answers.installation}\n\n` +
-    `# ${answers.License}\n\n` +
-    `# ${answers.tests}\n\n` +
-    `## ${answers.contributing}`
+  let format = `# ${answers.title}\n\n *** \n` +
+  `## Description\n ${answers.description}\n\n` +
+   `## Table of contents\n ${answers.tableofcontents}\n\n` +
+    `## Usage ${answers.usage}\n\n` +
+    `## Installation\n ***\n` + "```" +  `${answers.installation}` + "```" + `\n\n` +
+    `## License ${answers.license}\n\n` +
+    `## Tests ${answers.tests}\n\n` +
+    `### Contributors ${answers.contributing}`
 
    
   ;
