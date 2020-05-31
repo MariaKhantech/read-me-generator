@@ -81,9 +81,9 @@ const init = () => {
 	inquirer
 		.prompt(questions)
 		.then(async (answers) => {
-			//Calling the markdown function and waiting for it to complete, then returns
+			//Calling the markdown function and waiting for it to complete, then returns fomrmattee string
 			let formatReadme = await generate.generateMarkDown(answers);
-			//Passing in file name and data to the function
+			//Passing in file name and fomratted string to the write gitfunction
 			writeToFile('read-me.md', formatReadme);
 		})
 		.catch((error) => {
