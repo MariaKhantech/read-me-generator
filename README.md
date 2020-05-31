@@ -15,6 +15,9 @@
 
 ### Usage<a name="usage"/> 
  To use this application in your terminal. Install Node.js, then open the command terminal. Navigate toyour project directory. The required packages to run the program can be installed by using npm install. Or you may download them and the package names are in the install section of the read-me. Once packages are installed you run node.js and your index.js file. Prompts should begin and your read-me generated.
+---
+ ![read-me-generator](https://user-images.githubusercontent.com/61640527/83364811-e3668480-a371-11ea-8427-fa1c49259a46.gif)
+---
 
 ### Installation<a name="installation"/>
 ```markdown
