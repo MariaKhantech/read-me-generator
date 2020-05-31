@@ -1,5 +1,5 @@
 
-## TitleRead-me Generator [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/cheat-sheet/)
+## Read-me Generator [![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/cheat-sheet/)
 
 ### Description
  This is a read-me Generator app. I have used Node.js, and javascript to create this application. When running this application through the terminal using Node your prompted a series of questions. Those questions will then help you create a read me.
