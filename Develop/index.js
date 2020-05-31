@@ -20,12 +20,6 @@ const questions = [
 		message: 'Would you like a description?'
 	},
 	{
-		type: 'list',
-		name: 'tableofcontents',
-		message: 'What would you like in your table of contents?',
-		choices: [ 'Yes', 'No' ]
-	},
-	{
 		type: 'input',
 		name: 'installation',
 		message: 'What did you install?'
@@ -70,6 +64,7 @@ const questions = [
 	}
 ];
 
+//Writes down the formatted markdown to the file
 writeToFile = (fileName, data) => {
 	fs.writeFile(fileName, data, (err) => {
 		if (err) {
@@ -80,12 +75,15 @@ writeToFile = (fileName, data) => {
 	});
 };
 
+//Starts program, generates and asks questions
 const init = () => {
 	//start asking the questions to the users
 	inquirer
 		.prompt(questions)
 		.then(async (answers) => {
+			//Calling the markdown function and waiting for it to complete, then returns
 			let formatReadme = await generate.generateMarkDown(answers);
+			//Passing in file name and data to the function
 			writeToFile('read-me.md', formatReadme);
 		})
 		.catch((error) => {
@@ -93,4 +91,5 @@ const init = () => {
 		});
 };
 
+//calling init function
 init();

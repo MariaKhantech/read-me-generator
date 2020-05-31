@@ -1,64 +1,51 @@
 const axios = require('axios');
 
+//Creates and returns a table of contents
+const generateTOC = () => {
+	return `* [Usage](#usage)\n* [Installation](#installation)\n* [License](#license)\n* [Tests](#tests)\n* [Contributors](#contributors)\n* [Questions](#questions)`;
+};
+
+//Populate a badge and returns it
+const createBadge = () => {
+	return '[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](https://www.markdownguide.org/cheat-sheet/)';
+};
+
 // generates read me formatting
 async function generateMarkDown(answers) {
-	let format =
-		`# ${answers.title}\n\n` +
-		`## Description\n ${answers.description}\n\n` +
-		`## Table of contents\n ${answers.tableofcontents}\n\n` +
-		`## Usage \n ${answers.usage}\n\n` +
-		`## Installation\n` +
-		'```' +
-		`${answers.installation}` +
-		'```' +
-		`\n\n` +
-		`## License \n${answers.license}\n\n` +
-		`## Tests \n${answers.tests}\n\n` +
-		`### Contributors \n${answers.contributing}\n` +
-		`### Questions \n${answers.question}\n`;
-
 	//call the github api
 	const apiResponse = await axios.get(`https://api.github.com/users/${answers.username}`);
-	console.log(apiResponse);
-	console.log(apiResponse.data.avatar_url);
 
+	//Populates email from api
+	let questionsEmail = '';
 	if (answers.question1 === 'Yes') {
-		format = format + `Email: ${apiResponse.data.email}\n`;
+		questionsEmail = apiResponse.data.email;
+	}
+	//Populates a photo from api
+	let contributorPhoto = '';
+	if (answers.question2 === 'Yes') {
+		contributorPhoto = apiResponse.data.avatar_url + '.png';
 	}
 
-	if (answers.question1 === 'Yes') {
-		format = format + `Photo: ${apiResponse.data.avatar_url}\n`;
-	}
+	//Formats the readme
+	let format =
+		`## ${answers.title} ${createBadge()}\n\n` +
+		`### Description\n ${answers.description}\n\n` +
+		`### Table of contents\n---\n` +
+		`${generateTOC()}\n\n` +
+		`### Usage<a name="usage"/> \n ${answers.usage}\n\n` +
+		`### Installation<a name="installation"/>\n` +
+		'```markdown\n' +
+		`${answers.installation}\n` +
+		'```' +
+		`\n\n` +
+		`### License<a name="license"/> \n${answers.license}\n\n` +
+		`### Tests<a name="tests"/> \n${answers.tests}\n\n` +
+		`### Contributors<a name="contributors"/>\n ![my-image](${contributorPhoto})\n\n${answers.contributing}\n` +
+		`### Questions<a name="questions"/>\n${answers.question}\n Email: ${questionsEmail}\n`;
 
-	console.log('I AM HERE');
+	//returns the full markdown read me
 	return format;
 }
-
-//pass in username to call github api to retrieve users email
-const getEmail = async (username) => {
-	await axios
-		.get(`https://api.github.com/users/${username}`)
-		.then((response) => {
-			console.log('gettingemail:' + response.data.email);
-			return response.data.email;
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-};
-
-//retrieves the github photo api
-const getPhoto = async (username) => {
-	await axios
-		.get(`https://api.github.com/users/${username}`)
-		.then((response) => {
-			console.log(response.data.avatar_url);
-			return response.data.avatar_url;
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-};
 
 module.exports = {
 	generateMarkDown: generateMarkDown
