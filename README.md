@@ -19,9 +19,9 @@
 ### Installation<a name="installation"/>
 ```markdown
 I have used:
-*axios 
-*dotenv
-*inquirer 
+* axios 
+* dotenv
+* inquirer 
 
 These packages are from Node.js.
 ```
