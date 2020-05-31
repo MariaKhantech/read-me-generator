@@ -18,7 +18,12 @@
 
 ### Installation<a name="installation"/>
 ```markdown
-I have used axios, dotenv, and inquirer from Node.js.
+I have used:
+*axios 
+*dotenv
+*inquirer 
+
+These packages are from Node.js.
 ```
 
 ### License<a name="license"/> 
