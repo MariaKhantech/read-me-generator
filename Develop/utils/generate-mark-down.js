@@ -28,7 +28,7 @@ async function generateMarkDown(answers) {
 
 	//Formats the readme
 	let format =
-		`## Title${answers.title} ${createBadge()}\n\n` +
+		`## ${answers.title} ${createBadge()}\n\n` +
 		`### Description\n ${answers.description}\n\n` +
 		`### Table of contents\n---\n` +
 		`${generateTOC()}\n\n` +
