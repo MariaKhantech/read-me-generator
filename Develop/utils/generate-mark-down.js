@@ -28,7 +28,7 @@ async function generateMarkDown(answers) {
 
 	//Formats the readme
 	let format =
-		`## ${answers.title} ${createBadge()}\n\n` +
+		`## Title${answers.title} ${createBadge()}\n\n` +
 		`### Description\n ${answers.description}\n\n` +
 		`### Table of contents\n---\n` +
 		`${generateTOC()}\n\n` +
@@ -43,7 +43,7 @@ async function generateMarkDown(answers) {
 		`### Contributors<a name="contributors"/>\n ![my-image](${contributorPhoto})\n\n${answers.contributing}\n` +
 		`### Questions<a name="questions"/>\n${answers.question}\n Email: ${questionsEmail}\n`;
 
-	//returns the full markdown read me
+	//returns the full
 	return format;
 }
 
