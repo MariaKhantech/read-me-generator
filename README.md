@@ -37,8 +37,7 @@ No license
 No test section
 
 ### Contributors<a name="contributors"/>
- ![my-image](https://avatars3.githubusercontent.com/u/61640527?v=4.png)
-
+<img src="https://avatars3.githubusercontent.com/u/61640527?v=4.png" width="10%">
 Maria Khan
 ### Questions<a name="questions"/>
 Maria Khan
