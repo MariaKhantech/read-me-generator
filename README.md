@@ -7,7 +7,7 @@
 ### Table of contents
 ---
 * [Usage](#usage)
-* [Usage](#usage)
+* [Programs](#programs)
 * [License](#license)
 * [Tests](#tests)
 * [Contributors](#contributors)
@@ -20,7 +20,7 @@
  ![read-me-generator](https://user-images.githubusercontent.com/61640527/83364811-e3668480-a371-11ea-8427-fa1c49259a46.gif)
 ---
 
-### Usage<a name="usage"/>
+### Programs<a name="usage"/>
 ```markdown
 I have used:
 JavaScript
