@@ -7,7 +7,7 @@
 ### Table of contents
 ---
 * [Usage](#usage)
-* [Installation](#installation)
+* [Usage](#usage)
 * [License](#license)
 * [Tests](#tests)
 * [Contributors](#contributors)
@@ -20,9 +20,11 @@
  ![read-me-generator](https://user-images.githubusercontent.com/61640527/83364811-e3668480-a371-11ea-8427-fa1c49259a46.gif)
 ---
 
-### Installation<a name="installation"/>
+### Usage<a name="usage"/>
 ```markdown
 I have used:
+JavaScript
+Node
 * axios 
 * dotenv
 * inquirer 
